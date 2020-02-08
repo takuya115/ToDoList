@@ -8,5 +8,5 @@
 
 ### 言語仕様
 * 使用するのはHTML&CSS, およびjavascript(js)
-* スタイルはbootstrap4を使用
+* スタイルのリセットにはress.cssを使用
 * jsはバニラ(練習もかねて)
