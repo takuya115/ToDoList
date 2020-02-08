@@ -1,0 +1,14 @@
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 16px;
+}
+
+header {
+    background-color: orange;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
