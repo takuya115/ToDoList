@@ -23,13 +23,37 @@ main {
 
 #form {
     border: solid 1px #000;
+    padding: 1rem;
+}
+
+input[type=text], input[type=button] {
+    padding: 0.3rem;
+    border: solid 1px grey;
+    border-radius: 0.3rem;
+    margin: 0.3rem;
+}
+
+#form input[type=text]{
+    width: 100%;
+}
+
+#form input[type=button]{
+    float: right;
+    width: 6rem;
 }
 
 .todo {
+    position: relative;
     border: solid 1px #000;
     border-radius: 0.5rem;
     margin: 0.5rem;
     padding: 1rem;
+}
+
+.todo input[type=checkbox] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .todo-text, .create-at {
