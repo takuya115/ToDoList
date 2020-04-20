@@ -1,0 +1,20 @@
+{
+  "name": "todo_list",
+  "version": "1.0.0",
+  "description": "* ウェブアプリケーション(?)\r * ToDoリストの表示・作成・保存・編集・削除ができる\r * リストのデータはローカルストレージに保存する\r * 上限は100個とする",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takuya115/ToDoList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/takuya115/ToDoList/issues"
+  },
+  "homepage": "https://github.com/takuya115/ToDoList#readme"
+}
