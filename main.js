@@ -10,9 +10,20 @@ class ToDoList {
   // todoの追加
   addToDo(todo) {
     const date = new Date();
-    const record = [todo, date.toLocaleString()];
+    const idx = this.toDoList.length + 1;
+    const record = [idx, todo, date.toLocaleString()];
     this.toDoList.push(record);
   }
+  // todoの削除
+  removeToDo(chekedList) {
+    if (!confirm("削除します。よろしいですか？")) return;
+    const newTodoList = this.toDoList.filter((todo) => {
+      if (chekedList.includes(todo[0])) return false;
+      return true;
+    });
+    this.toDoList = newTodoList;
+  }
+
   // ロカールストレージへの保存
   saveList() {
     const jsonList = JSON.stringify(this.toDoList);
@@ -25,7 +36,11 @@ class ToDoList {
       this.toDoList = [];
       return;
     }
-    this.toDoList = JSON.parse(jsonList);
+    const todoList = JSON.parse(jsonList);
+    todoList.forEach((v, i) => {
+      v.unshift(i);
+    });
+    this.toDoList = todoList;
   }
   // リストレンダリング
   renderToDo() {
@@ -39,9 +54,9 @@ class ToDoList {
       const todoMain = document.createElement("div");
       todoMain.className = "todo";
       todoMain.id = idx;
-      todoMain.innerHTML = `<input type="checkbox">
-                            <div class="todo-text">${todo[0]}</div>
-                            <div class="create-at">${todo[1]}</div>`;
+      todoMain.innerHTML = `<input type="checkbox" id=${todo[0]}>
+                            <div class="todo-text">${todo[1]}</div>
+                            <div class="create-at">${todo[2]}</div>`;
 
       parent.appendChild(todoMain);
     });
@@ -56,5 +71,20 @@ document.querySelector("#create-todo").addEventListener("click", () => {
   const todo = document.querySelector("#i-todo").value;
   todolist.addToDo(todo);
   todolist.saveList();
+  todolist.renderToDo();
+});
+
+// 削除
+document.querySelector("#remove-todo").addEventListener("click", () => {
+  const allTodo = document.querySelectorAll(
+    '#todo-list input[type="checkbox"]'
+  );
+  const chekedList = [];
+  allTodo.forEach((item) => {
+    if (item.checked) {
+      chekedList.push(Number(item.parentElement.id));
+    }
+  });
+  todolist.removeToDo(chekedList);
   todolist.renderToDo();
 });

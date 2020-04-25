@@ -1,34 +1,35 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDoリスト</title>
     <!-- スタイルリセット -->
-    <link rel="stylesheet" href="ress.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="ress.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <h1>ToDoリスト</h1>
-        </nav>
+      <nav>
+        <h1>ToDoリスト</h1>
+      </nav>
     </header>
     <main>
-        <div id="form">
-            <input type="text" name="i-todo" id="i-todo">
-            <input type="button" value="入力" id="create-todo">
+      <div id="form">
+        <input type="text" name="i-todo" id="i-todo" />
+        <input type="button" value="削除" id="remove-todo" />
+        <input type="button" value="入力" id="create-todo" />
+      </div>
+      <div id="todo-list">
+        <div class="todo">
+          <input type="checkbox" />
+          <div class="todo-text">
+            ほげほげほげ
+          </div>
+          <div class="create-at">2020/02/09</div>
         </div>
-        <div id="todo-list">
-            <div class="todo">
-                <input type="checkbox">
-                <div class="todo-text">
-                    ほげほげほげ
-                </div>
-                <div class="create-at">2020/02/09</div>
-            </div>
-        </div>
+      </div>
     </main>
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
